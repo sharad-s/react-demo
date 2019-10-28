@@ -1,5 +1,5 @@
 # Youtube Clone
-[![Build Status](https://travis-ci.org/sharad-s/react-demo.svg?branch=master)](https://travis-ci.org/sharad-s/react-demo)
+[![Build Status](https://travis-ci.org/sharad-s/youtube-react.svg?branch=master)](https://travis-ci.org/sharad-s/youtube-react)
 
 Demo React Project for Pizza Hut Interview. 
 Search and Watch videos from Youtube in a clean, easy-to-use interface.
