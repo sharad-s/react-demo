@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.css';
 
 // Components
 import SearchBar from './components/SearchBar';
@@ -17,10 +16,13 @@ class App extends React.Component {
   };
 
   componentDidMount() {
+    // Set default search term
     this.onFormSubmit("Pizza Hut")
   }
 
+  // Make API call to Youtube and update state
   onFormSubmit = async value => {
+
     const res = await api
       .get('/search', {
         params: {
@@ -28,11 +30,11 @@ class App extends React.Component {
         },
       })
       .catch(err => console.log(err));
-    console.log(res);
 
     this.setState({ videos: res.data.items, selectedVideo: res.data.items[0] });
   };
 
+  // Sets currentVideo 
   onVideoSelect = video => {
     console.log('Selected Video', video);
     this.setState({ selectedVideo: video });
