@@ -31,7 +31,7 @@ export default class SearchBar extends Component {
             <label>Search Youtube</label>
             <input type="text" value={value} onChange={this.onFormChange} />
           </div>
-          <input type="submit" value="Submit" />
+          <input type="submit" value="Search" />
         </form>
       </div>
     );

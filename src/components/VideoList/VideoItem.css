@@ -5,6 +5,11 @@
     padding: 5px !important
 }
 
+.video-item:hover {
+    /* background-color: yellow; */
+    box-shadow: 4px 4px 4px -4px gray;
+  }
+
 
 .video-item.item img {
     max-width: 180px;
