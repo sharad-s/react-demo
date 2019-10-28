@@ -13,20 +13,24 @@ export default class SearchBar extends Component {
   onSubmit = e => {
     e.preventDefault();
     console.log('starting');
-    this.props.onFormSubmit(this.state.value).then(() => {
-      this.setState({ value: '' });
-    }).catch(() => alert("Didn't work"));
+    this.props
+      .onFormSubmit(this.state.value)
+      .then(() => {
+        this.setState({ value: '' });
+      })
+      .catch(() => alert("Didn't work"));
   };
 
   render() {
     const { value } = this.state;
 
     return (
-      <div>
-        <h1>SearchBar</h1>
-        <form onSubmit={this.onSubmit}>
-          <input type="text" value={value} onChange={this.onFormChange} />
-          <br />
+      <div className="search-bar ui segment">
+        <form className="ui form" onSubmit={this.onSubmit}>
+          <div className="field">
+            <label>Search Youtube</label>
+            <input type="text" value={value} onChange={this.onFormChange} />
+          </div>
           <input type="submit" value="Submit" />
         </form>
       </div>
