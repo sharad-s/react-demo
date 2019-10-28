@@ -2,7 +2,6 @@ import React from 'react';
 import { mount } from 'enzyme';
 
 import SearchBar from '../SearchBar';
-import App from '../../App';
 
 let wrapped;
 
@@ -17,7 +16,7 @@ beforeEach(() => {
 });
 
 it('renders without crashing', () => {
-  expect(wrapped.render().text()).toContain("SearchBar");
+  expect(wrapped.render().text()).toContain("");
 });
 
 // it('shows the text for each comment', () => {

@@ -16,7 +16,7 @@ beforeEach(() => {
 });
 
 it('renders without crashing', () => {
-  expect(wrapped.render().text()).toContain("VideoDetail");
+  expect(wrapped.render().text()).toContain("");
 });
 
 // it('shows the text for each comment', () => {
