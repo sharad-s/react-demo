@@ -2,6 +2,7 @@
 [![Build Status](https://travis-ci.org/sharad-s/youtube-react.svg?branch=master)](https://travis-ci.org/sharad-s/youtube-react)
 
 Demo React Project for Pizza Hut Interview. 
+
 Search and Watch videos from Youtube in a clean, easy-to-use interface.
 
 Makes use of: 
@@ -52,23 +53,22 @@ Run unit tests using Docker/docker-compose.
 ## Languages & tools
 
 ### HTML
-
-- [Jade](http://jade-lang.com/) for some templating.
+- [JSX](https://reactjs.org/docs/introducing-jsx.html) for templating.
 
 ### JavaScript
-
-- [JSHint](http://www.jshint.com/docs/) is used to prevent JavaScript error.
-- [JSCS](https://npmjs.org/package/jscs) is used to check coding conventions.
-- [Browserify](http://browserify.org/) to handle allow us to write our client-side scripts with [es6 syntax](http://es6.github.io/) thanks to [es6ify](https://github.com/thlorenz/es6ify).
-- [React](http://facebook.github.io/react) is used for UI.
+- [React](http://facebook.github.io/react)
+- [Axios](https://www.npmjs.com/package/axios) is used for making API calls.
+- [Youtube Data API](https://developers.google.com/youtube/v3) is used for Youtube Integration.
 
 ### CSS
+- [SemanticUI](https://semantic-ui.com/) is used to style the UI. 
+- [FontAwesome](https://fontawesome.com) is used for icons.
 
-- [cssnext](http://cssnext.putaindecode.io) is used to write futureproof CSS for CSS vendor prefix under the hood).
+## Testing
+- [Jest/Enzyme](https://airbnb.io/enzyme/docs/guides/jest.html) is used for Unit Testing components.
 
-_Autoprefixer_ is included and use [caniuse.com](http://caniuse.com/) database to avoid outdated prefixes. _You can forget CSS prefixes NOW._
-
-### Static server with Livereload
-
-The app embed for development a static connect server with livereload plugged.
-So each time you start the app, you get automatic refresh in the browser whenever you update a file.
+## CI/CD
+- [Git](https://git-scm.com/) is used for version control.
+- [Docker & Docker-compose](https://www.docker.com/) is used to containerize the app for development and production.
+- [TravisCI](https://travis-ci.org/) is used to trigger tests, builds and deployments through Git.
+- [AWS ElasticBeanstalk](https://aws.amazon.com/elasticbeanstalk/) is used to deploy the app in the cloud. 
