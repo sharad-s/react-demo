@@ -1,12 +1,16 @@
 import React from 'react';
 
-// Components
-import VideoItem from './VideoItem';
+// CSS
+import "./VideoItem.css"
 
+// List Component
 const VideoList = ({ videos, onVideoSelect }) => {
-    
   const renderedList = videos.map(video => (
-    <VideoItem video={video} onVideoSelect={onVideoSelect} />
+    <VideoItem
+      video={video}
+      onVideoSelect={onVideoSelect}
+      key={video.id.VideoId}
+    />
   ));
 
   return (
@@ -15,5 +19,23 @@ const VideoList = ({ videos, onVideoSelect }) => {
     </div>
   );
 };
+
+
+// Video Item Component
+const VideoItem = ({ video, onVideoSelect }) => {
+  return (
+    <div onClick={()=> onVideoSelect(video)} className="video-item item">
+      <img
+        className="ui image"
+        src={video.snippet.thumbnails.medium.url}
+        alt={video.snippet.title}
+      />
+      <div className="content">
+        <div className="header">{video.snippet.title}</div>
+      </div>
+    </div>
+  );
+};
+
 
 export default VideoList;
