@@ -41,6 +41,7 @@ export default class SearchBar extends Component {
             <div className="searchbar-form">
               <input
                 type="text"
+                placeholder="Search"
                 className="searchbar-input"
                 value={value}
                 onChange={this.onFormChange}
