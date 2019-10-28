@@ -17,7 +17,7 @@ export default class SearchBar extends Component {
         this.setState({value: ''})
 
     }
-
+ 
     render() {
         const { value } = this.state
 
