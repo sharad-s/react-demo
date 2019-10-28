@@ -9,34 +9,31 @@ import VideoDetail from './components/VideoDetail';
 import api from './utils/api';
 
 class App extends React.Component {
-
   state = {
     videos: [],
     selectedVideo: {},
   };
 
+  // Performs default search on page load
   componentDidMount() {
-    // Set default search term
-    this.onFormSubmit("Pizza Hut")
+    this.onFormSubmit('Pizza Hut');
   }
 
-  // Make API call to Youtube and update state
+  // Makes API call to Youtube and update state
   onFormSubmit = async value => {
-
     const res = await api
       .get('/search', {
         params: {
           q: value,
         },
       })
-      .catch(err => console.log(err));
+      .catch(err => console.log('App.jsx: onFormSubmit:', err));
 
     this.setState({ videos: res.data.items, selectedVideo: res.data.items[0] });
   };
 
-  // Sets currentVideo 
+  // Sets currentVideo
   onVideoSelect = video => {
-    console.log('Selected Video', video);
     this.setState({ selectedVideo: video });
   };
 

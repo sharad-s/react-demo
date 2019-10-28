@@ -2,6 +2,8 @@ import React from 'react';
 import isEmpty from '../../utils/isEmpty';
 
 const VideoDetail = ({ video }) => {
+
+  //  Handle null prop
   if (isEmpty(video)) {
     return <div>Loading...</div>;
   }

@@ -1,24 +1,26 @@
 import React, { Component } from 'react';
 
+// CSS
+import './SearchBar.css';
+
 export default class SearchBar extends Component {
   state = {
     value: '',
   };
 
+  // For Controlled Form Component
   onFormChange = e => {
     e.preventDefault();
     this.setState({ value: e.target.value });
   };
 
-  onSubmit = e => {
+  // Triggered on Form Submit
+  onSubmit = async e => {
     e.preventDefault();
-    console.log('starting');
-    this.props
-      .onFormSubmit(this.state.value)
-      .then(() => {
-        this.setState({ value: '' });
-      })
-      .catch(() => alert("Didn't work"));
+    await this.props.onFormSubmit(this.state.value);
+
+    // Empty Form value
+    this.setState({ value: '' });
   };
 
   render() {
@@ -27,11 +29,27 @@ export default class SearchBar extends Component {
     return (
       <div className="search-bar ui segment">
         <form className="ui form" onSubmit={this.onSubmit}>
-          <div className="field">
-            <label>Search Youtube</label>
-            <input type="text" value={value} onChange={this.onFormChange} />
+          <div className="searchbar-field field">
+
+            {/* Label */}
+            <label className="searchbar-label">
+              <i className="fab fa-youtube fa-2x" style={{ margin: '5px' }} />
+              Search Youtube
+            </label>
+
+            {/* Form */}
+            <div className="searchbar-form">
+              <input
+                type="text"
+                className="searchbar-input"
+                value={value}
+                onChange={this.onFormChange}
+              />
+              <button className="searchbar-submit ui button" type="submit">
+                <i className="fas fa-search" />
+              </button>
+            </div>
           </div>
-          <input type="submit" value="Search" />
         </form>
       </div>
     );

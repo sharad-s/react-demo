@@ -5,6 +5,7 @@ import "./VideoItem.css"
 
 // List Component
 const VideoList = ({ videos, onVideoSelect }) => {
+
   const renderedList = videos.map(video => (
     <VideoItem
       video={video}
@@ -14,14 +15,13 @@ const VideoList = ({ videos, onVideoSelect }) => {
   ));
 
   return (
-    <div role="list" className="ui list">
+    <div className="ui list">
       {renderedList}
     </div>
   );
 };
 
-
-// Video Item Component
+// Video Item SubComponent
 const VideoItem = ({ video, onVideoSelect }) => {
   return (
     <div onClick={()=> onVideoSelect(video)} className="video-item item">

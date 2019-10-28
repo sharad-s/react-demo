@@ -1,0 +1,28 @@
+.searchbar-label {
+    display: flex !important;
+    align-items: center !important;
+}
+
+.searchbar-field {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.searchbar-form {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.searchbar-input {
+    border-top-right-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
+}
+
+.searchbar-submit {
+    height: 100%;
+    border-top-left-radius: 0px !important;
+    border-bottom-left-radius: 0px !important;
+}
