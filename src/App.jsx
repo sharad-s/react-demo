@@ -20,22 +20,26 @@ class App extends React.Component {
   }
 
   // Makes API call to Youtube and update state
-  onFormSubmit = async value => {
-    const res = await api
+  onFormSubmit = value => {
+    api
       .get('/search', {
         params: {
           q: value,
         },
       })
+      .then(res =>
+        this.setState({
+          videos: res.data.items,
+          selectedVideo: res.data.items[0],
+        }),
+      )
       .catch(err => console.log('App.jsx: onFormSubmit:', err));
-
-    this.setState({ videos: res.data.items, selectedVideo: res.data.items[0] });
   };
 
   // Sets currentVideo
   onVideoSelect = video => {
     this.setState({ selectedVideo: video });
-  };
+  };  
 
   render() {
     return (

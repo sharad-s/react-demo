@@ -64,10 +64,10 @@ Run unit tests using Docker/docker-compose.
 - [SemanticUI](https://semantic-ui.com/) is used to style the UI. 
 - [FontAwesome](https://fontawesome.com) is used for icons.
 
-## Testing
+### Testing
 - [Jest/Enzyme](https://airbnb.io/enzyme/docs/guides/jest.html) is used for Unit Testing components.
 
-## CI/CD
+### CI/CD
 - [Git](https://git-scm.com/) is used for version control.
 - [Docker & Docker-compose](https://www.docker.com/) is used to containerize the app for development and production.
 - [TravisCI](https://travis-ci.org/) is used to trigger tests, builds and deployments through Git.
